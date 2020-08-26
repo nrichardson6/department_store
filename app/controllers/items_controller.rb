@@ -5,9 +5,14 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @department = Department.find(params[:department_id])
+    @item = Item.find(params[:id])
   end
 
   def new
+    @department = Department.find(params[:department_id])
+    @item = @department.items.new
+    render partial: "form"
   end
 
   def edit
