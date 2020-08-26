@@ -11,7 +11,7 @@ class DepartmentsController < ApplicationController
 
   def new
     @department = Department.new
-    render partial: "form"
+    render :_form
   end
 
   def create

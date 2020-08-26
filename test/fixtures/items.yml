@@ -3,7 +3,9 @@
 one:
   name: MyString
   price: MyString
+  department: one
 
 two:
   name: MyString
   price: MyString
+  department: two
