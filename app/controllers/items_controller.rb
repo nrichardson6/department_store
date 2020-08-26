@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
   def index
+    @department = Department.find(params[:department_id])
+    @items = @department.items
   end
 
   def show
