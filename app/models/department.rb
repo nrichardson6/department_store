@@ -1,3 +1,3 @@
 class Department < ApplicationRecord
-  has_many :items, dependents: :destroy
+  has_many :items, dependent: :destroy
 end

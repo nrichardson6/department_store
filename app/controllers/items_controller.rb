@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+ 
+  
   def index
     @department = Department.find(params[:department_id])
     @items = @department.items
@@ -12,7 +14,7 @@ class ItemsController < ApplicationController
   def new
     @department = Department.find(params[:department_id])
     @item = @department.items.new
-    render partial: _form
+    render partial: "form"
   end
 
   def create
@@ -22,7 +24,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to department_item_path[@department, @item]
     else
-      render partial: _form
+      render partial: "form"
     end
   end
 
@@ -30,7 +32,7 @@ class ItemsController < ApplicationController
     @department = Department.find(params[:department_id])
     @item = @department.items.find(params[:id])
 
-    render :_form
+    render partial: "form"
   end
 
   def update
@@ -40,7 +42,7 @@ class ItemsController < ApplicationController
     if(@item.update(item_params))
       redirect_to department_items_path(@department)
     else
-      render partial: _form
+      render partial: "form"
     end
   end
 
